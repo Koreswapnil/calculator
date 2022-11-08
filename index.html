@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: cornflowerblue;
+    }
+    .main{
+        height: 400px;
+        width: 400px;
+        background-color: rgb(156, 96, 52);
+        margin-left: 100px;
+        padding-left: 150px;
+        border: 2px solid brown;
+        border-radius: 20px 20px 20px 20px;
+    }
+
+    h1{
+        height: 50px;
+        width: 220px;
+        background-color: rgb(138, 244, 32);
+        border: 2px solid rgb(248, 220, 220);
+        border-radius: 5px 5px 5px 5px;
+        padding: 5px;
+
+    }
+    
+    #first{
+        text-align: center;
+        border: 2px solid red;
+        border-radius: 2px 2px 2px 2px;
+        margin: 5px;
+        padding: 5px;
+    }
+    #second{
+        text-align: center;
+        border: 2px solid red;
+        border-radius: 2px;
+        margin: 5px;
+        padding: 5px;
+    }
+    #res{
+        text-align: center;
+        border: 2px solid red;
+        border-radius: 2px;
+        margin: 5px;
+        padding: 5px;
+    }
+</style>
+<body>
+    <div class="main">
+        <h1>My Calculator</h1>
+    <input type="number" name="first" id="first" step="any"/>
+</br>
+    <select id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">X</option>
+        <option value="/">/</option>
+    </select>
+
+</br>
+    <input type="number" name="second" id="second" step="any"/>
+</br>
+    <button onclick="cal()">Calculate</button>
+</br>
+    <input type="text" id="res" name="" readonly=""/>
+
+    </div>
+    
+</body>
+<script type="text/javascript">
+    function cal(){
+        var opr1 = document.getElementById('first').value;
+        var op = document.getElementById('op').value;
+        var opr2 = document.getElementById('second').value;
+        
+
+        switch(op){
+            case '+' :
+                res = parseInt(opr1) + parseInt(opr2);
+                break;
+            case '-' :
+                res = parseInt(opr1) - parseInt(opr2);
+                break;
+            case '*' : 
+                res = parseInt(opr1) * parseInt(opr2);
+                break;
+            case '/':
+                res = parseInt(opr1) / parseInt(opr2);
+                break;
+            default :
+                res = "not valid"
+        }
+         document.getElementById('res').value = res;
+    }
+
+</script>
+</html>
